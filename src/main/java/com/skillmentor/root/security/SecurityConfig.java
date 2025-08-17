@@ -23,7 +23,7 @@ import java.util.Base64;
 @EnableMethodSecurity(prePostEnabled = true)
 public class SecurityConfig {
 
-    private static final String JWKS_URL = "https://exact-titmouse-99.clerk.accounts.dev/.well-known/jwks.json";
+    private static final String JWKS_URL = "https://nice-moccasin-19.clerk.accounts.dev/.well-known/jwks.json";
 
     // TODO: Remove after demonstration of swagger as endpoint is insecure
 //    @Bean
