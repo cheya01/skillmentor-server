@@ -143,7 +143,7 @@ public class MentorController {
             @ApiResponse(responseCode = "404", description = "Mentor not found"),
             @ApiResponse(responseCode = "500", description = "Internal server error")
     })
-    @PreAuthorize(Constants.ADMIN_ROLE_PERMISSION)
+//    @PreAuthorize(Constants.ADMIN_ROLE_PERMISSION)
     @GetMapping(value = "/mentor/{id}", produces = Constants.APPLICATION_JSON)
     public ResponseEntity<?> findMentorById(
             @Parameter(description = "ID of the mentor to retrieve", required = true)

@@ -66,7 +66,7 @@ public class ClassroomController {
             @ApiResponse(responseCode = "404", description = "No classrooms found"),
             @ApiResponse(responseCode = "500", description = "Internal server error")
     })
-//    @PreAuthorize(Constants.ADMIN_ROLE_PERMISSION) // TODO: Change to STUDENT_ROLE_PERMISSION after configurations
+    @PreAuthorize(Constants.ADMIN_ROLE_PERMISSION)
     @GetMapping(value = "/classroom/unassigned", produces = Constants.APPLICATION_JSON)
     public ResponseEntity<List<ClassRoomDTO>> getAllUnassignedClassrooms() {
         final List<ClassRoomDTO> classroomDTOS = classroomService.getAllUnassignedClassrooms();
