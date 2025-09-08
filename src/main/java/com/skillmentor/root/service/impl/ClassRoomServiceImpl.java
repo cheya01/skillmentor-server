@@ -35,6 +35,21 @@ public class ClassRoomServiceImpl implements ClassRoomService {
     }
 
     @Override
+    public List<ClassRoomDTO> getAllUnassignedClassrooms() {
+        final List<ClassRoomEntity> classRoomEntities = classRoomRepository.findByMentorIsNull();
+        return classRoomEntities.stream().map(
+                entity -> {
+                    final ClassRoomDTO classRoomDTO = ClassRoomEntityDTOMapper.map(entity);
+                    if (entity.getMentor() != null) {
+                        final MentorDTO mentorDTO = MentorEntityDTOMapper.map(entity.getMentor());
+                        classRoomDTO.setMentorDTO(mentorDTO);
+                    }
+                    return classRoomDTO;
+                }
+        ).toList();
+    }
+
+    @Override
     public ClassRoomDTO findClassRoomById(Integer id) {
         final Optional<ClassRoomEntity> classRoomEntity = classRoomRepository.findById(id);
         if (classRoomEntity.isEmpty()) {

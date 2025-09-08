@@ -16,6 +16,12 @@ public interface ClassRoomService {
     List<ClassRoomDTO> getAllClassRooms();
 
     /**
+     * Retrieves all classrooms with mentor_id = null.
+     * @return a list of {@link ClassRoomDTO} where mentor_id = null
+     */
+    List<ClassRoomDTO> getAllUnassignedClassrooms();
+
+    /**
      * Finds a classroom by its ID.
      *
      * @param id the unique ID of the classroom

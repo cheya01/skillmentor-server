@@ -14,5 +14,5 @@ public interface MentorRepository extends JpaRepository<MentorEntity, Integer> {
      * @param clerkId the clerk ID of the mentor
      * @return the MentorEntity if found, otherwise null
      */
-    Optional<MentorEntity> findByClerkMentorId(String clerkId);
+//    Optional<MentorEntity> findByClerkMentorId(String clerkId);
 }

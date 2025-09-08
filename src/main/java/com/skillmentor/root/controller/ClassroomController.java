@@ -60,6 +60,19 @@ public class ClassroomController {
         return ResponseEntity.ok(classroomDTOS);
     }
 
+    @Operation(summary = "Get all unassigned classrooms", description = "Fetches a list of all classrooms with no mentor_id")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Unassigned classroom list retrieved successfully"),
+            @ApiResponse(responseCode = "404", description = "No classrooms found"),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
+    })
+//    @PreAuthorize(Constants.ADMIN_ROLE_PERMISSION) // TODO: Change to STUDENT_ROLE_PERMISSION after configurations
+    @GetMapping(value = "/classroom/unassigned", produces = Constants.APPLICATION_JSON)
+    public ResponseEntity<List<ClassRoomDTO>> getAllUnassignedClassrooms() {
+        final List<ClassRoomDTO> classroomDTOS = classroomService.getAllUnassignedClassrooms();
+        return ResponseEntity.ok(classroomDTOS);
+    }
+
     @Operation(summary = "Get classroom by ID", description = "Fetches a classroom using its unique identifier")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Classroom retrieved successfully"),

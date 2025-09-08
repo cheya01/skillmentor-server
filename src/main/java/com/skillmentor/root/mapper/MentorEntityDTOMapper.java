@@ -7,7 +7,7 @@ public class MentorEntityDTOMapper {
     public static MentorDTO map(MentorEntity mentorEntity) {
         MentorDTO mentorDTO = new MentorDTO();
         mentorDTO.setMentorId(mentorEntity.getMentorId());
-        mentorDTO.setClerkMentorId(mentorEntity.getClerkMentorId());
+//        mentorDTO.setClerkMentorId(mentorEntity.getClerkMentorId());
         mentorDTO.setFirstName(mentorEntity.getFirstName());
         mentorDTO.setLastName(mentorEntity.getLastName());
         mentorDTO.setEmail(mentorEntity.getEmail());
@@ -25,7 +25,7 @@ public class MentorEntityDTOMapper {
     public static MentorEntity map(MentorDTO mentorDTO) {
         MentorEntity mentorEntity = new MentorEntity();
         mentorEntity.setMentorId(mentorDTO.getMentorId());
-        mentorEntity.setClerkMentorId(mentorDTO.getClerkMentorId());
+//        mentorEntity.setClerkMentorId(mentorDTO.getClerkMentorId());
         mentorEntity.setFirstName(mentorDTO.getFirstName());
         mentorEntity.setLastName(mentorDTO.getLastName());
         mentorEntity.setEmail(mentorDTO.getEmail());

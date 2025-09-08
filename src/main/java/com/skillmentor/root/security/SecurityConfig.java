@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -18,6 +19,7 @@ import java.security.PublicKey;
 import java.security.spec.RSAPublicKeySpec;
 import java.util.Base64;
 
+@Profile("!dev") // active when NOT in dev
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity(prePostEnabled = true)

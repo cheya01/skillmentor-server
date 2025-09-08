@@ -34,10 +34,12 @@ public class ClassRoomEntity {
     @Column(name = "class_image", nullable = false)
     @Schema(description = "Image URL for the classroom", example = "http://example.com/classroom.jpg")
     private String classImage;
+
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "mentor_id", referencedColumnName = "mentor_id")
     @Schema(description = "Mentor assigned to this classroom")
     private MentorEntity mentor;
+
     @OneToMany(mappedBy = "classRoomEntity", fetch = FetchType.EAGER)
     @Schema(description = "List of sessions associated with this classroom")
     private List<SessionEntity> sessionEntityList = new ArrayList<>();

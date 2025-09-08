@@ -39,7 +39,7 @@ public interface MentorService {
      * @param clerkId the clerk ID of the mentor to retrieve
      * @return a MentorDTO object representing the mentor
      */
-    MentorDTO findMentorByClerkId(String clerkId) throws MentorException;
+//    MentorDTO findMentorByClerkId(String clerkId) throws MentorException;
 
     /**
      * Updates an existing mentor's details.
@@ -63,5 +63,5 @@ public interface MentorService {
      * @param clerkId the clerk ID of the mentor to delete
      * @return a MentorDTO object representing the deleted mentor
      */
-    MentorDTO deleteMentorByClerkId(String clerkId) throws MentorException;
+//    MentorDTO deleteMentorByClerkId(String clerkId) throws MentorException;
 }
